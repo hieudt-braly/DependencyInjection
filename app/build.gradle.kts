@@ -51,8 +51,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation(libs.dagger)
-    kapt(libs.daggerCompiler)
+    implementation(libs.koin)
 
     implementation(libs.androidx.fragment.ktx)
 }
