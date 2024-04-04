@@ -6,28 +6,10 @@ import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.AP
 import androidx.lifecycle.viewmodel.CreationExtras
 import com.example.dependencyinjection.MyApplication
 import com.example.dependencyinjection.data.UserRepository
+import javax.inject.Inject
 
-class UserViewModel(
+class UserViewModel @Inject constructor(
     val userRepository: UserRepository
 ): ViewModel() {
     fun getUserList() = userRepository.getUserList()
-
-    companion object {
-
-        val Factory: ViewModelProvider.Factory = object : ViewModelProvider.Factory {
-            @Suppress("UNCHECKED_CAST")
-            override fun <T : ViewModel> create(
-                modelClass: Class<T>,
-                extras: CreationExtras
-            ): T {
-                // Get the Application object from extras
-                val application = checkNotNull(extras[APPLICATION_KEY])
-                // Create a SavedStateHandle for this ViewModel from extras
-
-                return UserViewModel(
-                    (application as MyApplication).userRepository,
-                ) as T
-            }
-        }
-    }
 }

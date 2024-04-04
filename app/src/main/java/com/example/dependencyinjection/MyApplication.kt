@@ -1,14 +1,11 @@
 package com.example.dependencyinjection
 
 import android.app.Application
-import com.example.dependencyinjection.data.UserRepository
-import com.example.dependencyinjection.setup.UserStorage
+import com.example.dependencyinjection.di.AppComponent
+import com.example.dependencyinjection.di.DaggerAppComponent
 
-class MyApplication: Application() {
-    val userStorage: UserStorage by lazy {
-        UserStorage()
-    }
-    val userRepository: UserRepository by lazy {
-        UserRepository(userStorage)
+class MyApplication : Application() {
+    val appComponent: AppComponent by lazy {
+        DaggerAppComponent.create()
     }
 }
