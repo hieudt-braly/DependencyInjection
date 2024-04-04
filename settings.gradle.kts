@@ -21,5 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "DependencyInjection"
 include(":app")
-include(":app")
- 

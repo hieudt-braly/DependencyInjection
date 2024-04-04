@@ -24,8 +24,11 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 dagger = {group = "com.google.dagger", name = "dagger", version.ref = "dagger"}
 daggerCompiler = {group = "com.google.dagger", name = "dagger-compiler", version.ref = "dagger"}
+hilt = {group = "com.google.dagger", name = "hilt-android", version.ref = "dagger"}
+hiltCompiler = {group = "com.google.dagger", name = "hilt-compiler", version.ref = "dagger"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 jetbrainsKotlinKapt = {id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin"}
+daggerHilt = {id = "com.google.dagger.hilt.android", version.ref = "dagger"}

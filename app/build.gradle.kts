@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.jetbrainsKotlinKapt)
+    alias(libs.plugins.daggerHilt)
 }
 
 android {
@@ -40,6 +41,10 @@ android {
     }
 }
 
+kapt{
+    correctErrorTypes = true
+}
+
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -51,8 +56,10 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation(libs.dagger)
-    kapt(libs.daggerCompiler)
+//    implementation(libs.dagger)
+//    kapt(libs.daggerCompiler)
+    implementation(libs.hilt)
+    kapt(libs.hiltCompiler)
 
     implementation(libs.androidx.fragment.ktx)
 }

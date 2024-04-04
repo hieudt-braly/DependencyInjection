@@ -6,19 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.dependencyinjection.MainActivity
-import com.example.dependencyinjection.MyApplication
 import com.example.dependencyinjection.databinding.FragmentDisplayBinding
 import com.example.dependencyinjection.presentation.adapter.UserAdapter
 import com.example.dependencyinjection.presentation.viewModel.UserViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class DisplayFragment : Fragment() {
     private var _binding: FragmentDisplayBinding? = null
     private val binding get() = _binding!!
 
-    @Inject
-    lateinit var userViewModel: UserViewModel
+    private val userViewModel: UserViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -28,7 +29,6 @@ class DisplayFragment : Fragment() {
     }
 
     override fun onAttach(context: Context) {
-        (activity as MainActivity).appComponent.inject(this)
         super.onAttach(context)
     }
 

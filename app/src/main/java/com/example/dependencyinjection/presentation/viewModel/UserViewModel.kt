@@ -6,8 +6,10 @@ import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.AP
 import androidx.lifecycle.viewmodel.CreationExtras
 import com.example.dependencyinjection.MyApplication
 import com.example.dependencyinjection.data.UserRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
+@HiltViewModel
 class UserViewModel @Inject constructor(
     val userRepository: UserRepository
 ): ViewModel() {
