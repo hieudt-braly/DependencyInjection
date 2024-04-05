@@ -11,11 +11,12 @@ import com.example.dependencyinjection.R
 import com.example.dependencyinjection.databinding.FragmentDisplayBinding
 import com.example.dependencyinjection.presentation.adapter.UserAdapter
 import com.example.dependencyinjection.presentation.viewModel.UserViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DisplayFragment : Fragment() {
     private var _binding: FragmentDisplayBinding? = null
     private val binding get() = _binding!!
-    private val userViewModel: UserViewModel by viewModels{UserViewModel.Factory}
+    private val userViewModel: UserViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

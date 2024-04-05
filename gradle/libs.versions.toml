@@ -11,6 +11,7 @@ material = "1.11.0"
 activity = "1.8.0"
 constraintlayout = "2.1.4"
 dagger = "2.51.1"
+koin = "3.4.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -24,6 +25,7 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 dagger = {group = "com.google.dagger", name = "dagger", version.ref = "dagger"}
 daggerCompiler = {group = "com.google.dagger", name = "dagger-compiler", version.ref = "dagger"}
+koin = {group = "io.insert-koin", name = "koin-android", version.ref = "koin"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
